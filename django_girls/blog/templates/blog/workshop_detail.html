@@ -1,0 +1,17 @@
+
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="workshop">
+        {% if workshop.created_date %}
+            <div class="date">
+                {{ workshop.created_date }}
+            </div>
+        {% endif %}
+        {% if user.is_authenticated %}
+            <a class="btn btn-default" href="{% url 'workshop_edit' pk=workshop.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        {% endif %}
+        <h1>{{ workshop.title }}</h1>
+        <p>{{ workshop.desc|linebreaksbr }}</p>
+    </div>
+{% endblock %}

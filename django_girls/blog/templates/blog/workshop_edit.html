@@ -1,0 +1,27 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <h1>Detalles del taller</h1>
+    <form method="POST" class="post-form">{% csrf_token %}
+	    <script type="text/javascript"> 
+	    var a = 2;
+	    $(document).bind("keypress", function (e) {
+	            if (e.keyCode == 13) {
+	                $("#submitForm").click();
+	                return false;
+	            }
+	        });;
+	    </script>
+
+        {% for field in form %}
+        <div>
+            {{ field.errors }}
+            {{ field.label_tag }} {{ field }}
+        </div>
+        {% endfor %}
+
+        <button type="submit" formnovalidate name='delete' tabindex=-1>borrar</button>
+        <button type="submit" class="save btn btn-default" id="submitForm">Guardar</button>
+    </form>
+{% endblock %}
+

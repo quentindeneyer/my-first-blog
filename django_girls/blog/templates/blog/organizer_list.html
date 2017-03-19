@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    {% for organizer in organizers %}
+        <div class="workshop">
+            <div class="date">
+                {{ organizer.name }}
+                {{ organizer.contact_email }}
+                {{ organizer.contact_phone }}
+            </div>
+            <h1><a href="{% url 'workshop_detail' pk=organizer.pk %}">{{ organizer.name }}</a></h1>
+            <p>{{ organizer.contact_email|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
