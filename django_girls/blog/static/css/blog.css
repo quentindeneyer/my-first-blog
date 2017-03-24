@@ -334,7 +334,7 @@ h1, h3, h4 {
         display: block;
         height: 100%;
         width: 40px;
-        padding: 7px 0px 9px;
+        padding: 14px 0px 9px;
     }
 }
 
@@ -342,5 +342,9 @@ h1, h3, h4 {
     .event-list > li {
         width: 615px;
         height: 90px;
+    }
+
+    .event-list > li > .social > ul > li > a {
+        padding: 7px 0px 9px;
     }
 }

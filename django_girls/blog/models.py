@@ -18,7 +18,7 @@ class Organizer(models.Model):
 class Workshop(models.Model):
     organizer = models.ForeignKey(Organizer, on_delete=models.CASCADE, default=0)
     title = models.CharField(max_length=44, default='')
-    desc = models.TextField(max_length=195,default='')
+    desc = models.TextField(max_length=185,default='')
     contact_email = models.EmailField(max_length=75, default='', null=True, blank=True)
     contact_phone = models.BigIntegerField(default=0)
     workshop_start_date = models.DateField(
